@@ -9231,6 +9231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2121811622392699140}
   playerMovement: {fileID: 7808368445505876745}
+  inventory: {fileID: 6918180635225283582}
+  craftingSystem: {fileID: 2235431975747079510}
 --- !u!1 &5838439768127456150
 GameObject:
   m_ObjectHideFlags: 0
@@ -12255,6 +12257,7 @@ MonoBehaviour:
   craftingSystem: {fileID: 2235431975747079510}
   playerMovement: {fileID: 7808368445505876745}
   pickUpSystem: {fileID: 2735199412312039281}
+  inputListener: {fileID: 8897839832991538035}
 --- !u!114 &8606232681635075570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12300,6 +12303,7 @@ MonoBehaviour:
   pickUpSystem: {fileID: 2735199412312039281}
   playerMovement: {fileID: 7808368445505876745}
   aim: {fileID: 253138040896721323}
+  inputListener: {fileID: 8897839832991538035}
 --- !u!114 &7871724295945379114
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using Character;
+using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private CraftingSystem craftingSystem;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PickUpSystem pickUpSystem;
+    [SerializeField] private InputListener inputListener;
 
     public bool IsInvetoryOpen { get; set; }
     private Dictionary<InventoryCell, Item> _inventoryData;
@@ -34,7 +36,7 @@ public class Inventory : MonoBehaviour
             HotbarUpdateUI();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && !craftingSystem.IsCrafting)
+        if (Input.GetKeyDown(KeyCode.Tab) && (!craftingSystem.IsCrafting && !inputListener.OnPause))
         {
             if (inventoryUI.activeInHierarchy)
             {

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class ItemDestroyer : MonoBehaviour
@@ -25,6 +26,8 @@ public class ItemDestroyer : MonoBehaviour
         {
             currentItem = other.gameObject;
             other.gameObject.SetActive(false);
+            Destroy(other.GetComponent<PhotonView>());
+
             if (_take)
                 transform.position = _playerPos;
             else

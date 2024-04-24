@@ -22,16 +22,16 @@ public class PrefabBuild : MonoBehaviour
         {
             materials.Add(meshes[i].GetComponent<Renderer>().material);
         }
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            colliders[i].enabled = false;
-        }
     }
 
     private void Update()
     {
         if(IsHologram)
         {
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].enabled = false;
+            }
             RaycastHit hit;
 
             if (Physics.Raycast(ray.transform.position, ray.transform.forward, out hit, 1.5f))

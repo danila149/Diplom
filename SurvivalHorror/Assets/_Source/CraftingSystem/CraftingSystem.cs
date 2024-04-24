@@ -1,3 +1,4 @@
+using Character;
 using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] private PickUpSystem pickUpSystem;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private GameObject aim;
+    [SerializeField] private InputListener inputListener;
 
     private Transform _spawnpoint;
     private List<CraftData> _craftables;
@@ -40,7 +42,7 @@ public class CraftingSystem : MonoBehaviour
                 _spawnpoint = _workbench.Spawnpoint;
                 aim.SetActive(true);
 
-                if (!inventory.IsInvetoryOpen && Input.GetKeyDown(KeyCode.E))
+                if ((!inventory.IsInvetoryOpen && !inputListener.OnPause) && Input.GetKeyDown(KeyCode.E))
                     ShowCraftingMenu();
             }
 
