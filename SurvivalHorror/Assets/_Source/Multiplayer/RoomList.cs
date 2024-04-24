@@ -206,7 +206,6 @@ public class RoomList : MonoBehaviourPunCallbacks
                     if (key.Equals("password"))
                     {
                         _currentPassword = room.CustomProperties[key].ToString();
-                        Debug.Log(_currentPassword);
                         error.SetActive(false);
                         passwordPanel.SetActive(true);
                         return;

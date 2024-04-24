@@ -31,13 +31,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         nickname = PlayerPrefs.GetString(NICKNAME);
         inputNickname.onValueChanged.AddListener(ChangeNickname);
+        connectionScreen.SetActive(false);
     }
 
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        connectionScreen.SetActive(false);
         PhotonNetwork.LoadLevel(1);
     }
 

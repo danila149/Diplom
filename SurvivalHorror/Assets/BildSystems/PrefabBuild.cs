@@ -40,6 +40,8 @@ public class PrefabBuild : MonoBehaviour
                     can = false;
                 else
                     can = true;
+                if (hit.transform.tag == "Player")
+                    can = false;
             }
             else
             {

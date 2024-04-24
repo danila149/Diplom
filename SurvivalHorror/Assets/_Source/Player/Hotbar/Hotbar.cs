@@ -73,6 +73,7 @@ public class Hotbar : MonoBehaviour
                     _hotbarData[_currentActiveCell] = null;
                 }
 
+                ShowItem();
                 UpdateInventory();
             }
         }

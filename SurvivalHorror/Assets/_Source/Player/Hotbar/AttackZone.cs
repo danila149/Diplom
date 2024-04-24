@@ -9,20 +9,37 @@ public class AttackZone : MonoBehaviour
     private int _objectLayer;
     private int _damage;
     private Hotbar _hotbar;
+    private GameObject _destroyer;
+
+    private void Awake()
+    {
+        _destroyer = GameObject.FindGameObjectWithTag("Destroyer");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == _objectLayer)
         {
             StartCoroutine(ShowHit());
-            other.GetComponent<ADamagable>().GetDamage(_damage);
-            if(other.GetComponent<ADamagable>().dropType != ResourceType.None)
+            
+            if (other.GetComponent<ADamagable>().dropType != ResourceType.None)
             {
                 Items.Resource collectedItem = PhotonNetwork.Instantiate(other.GetComponent<ADamagable>().dropType.ToString(), transform.position, Quaternion.identity).GetComponent<Items.Resource>();
                 collectedItem.Amount = _damage;
                 _hotbar.GetResource(collectedItem);
             }
+            if (other.GetComponent<ADamagable>().GetDamage(_damage))
+            {
+                GetComponent<PhotonView>().RPC("Disable", RpcTarget.AllBuffered, other.transform.position);
+            }
         }
+    }
+
+    [PunRPC]
+    private void Disable(Vector3 pos)
+    {
+        _destroyer.SetActive(true);
+        _destroyer.transform.position = pos;
     }
 
     private IEnumerator ShowHit()

@@ -7,11 +7,14 @@ public class Builds : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 9; i++) 
         {
-            if (Input.GetKey(i.ToString()))
+            if (Input.GetKey(KeyCode.E))
             {
-                SetPrefab(i);
+                if (Input.GetKey(i.ToString())) 
+                {
+                    SetPrefab(i);
+                }
             }
         }
     }

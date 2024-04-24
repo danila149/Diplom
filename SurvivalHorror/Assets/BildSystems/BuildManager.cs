@@ -13,10 +13,13 @@ public class BuildManager : MonoBehaviour
     Quaternion trot;
 
     void Update()
-    {   
-        if (created != null){
+    {
+        if (created != null)
+        {
             trot = Quaternion.Lerp(created.transform.rotation, Quaternion.Euler(rot), 0.2f);
-            if (Input.GetKeyDown(KeyCode.Mouse1)){
+            trot = Quaternion.Lerp(created.transform.rotation, Quaternion.Euler(rot), 0.3f);
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
                 Destroy(created.gameObject);
                 prefab = null;
             }
@@ -55,8 +58,7 @@ public class BuildManager : MonoBehaviour
                         }
                         created.transform.rotation = trot;
                         created.transform.position = Vector3.Lerp(created.transform.position, pos, 10f * Time.deltaTime);
-
-                        
+                        created.transform.position = pos;
                     }
                 }
             }

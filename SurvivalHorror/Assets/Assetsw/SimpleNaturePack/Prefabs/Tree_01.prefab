@@ -152,7 +152,9 @@ GameObject:
   - component: {fileID: 1255735844759439003}
   - component: {fileID: 5708200766736619226}
   - component: {fileID: 3305318728398867325}
-  m_Layer: 0
+  - component: {fileID: 1621836342789901449}
+  - component: {fileID: 7551782888788955079}
+  m_Layer: 11
   m_Name: Tree_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,3 +240,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 811424468950150501, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+--- !u!114 &1621836342789901449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155140798900432468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae1ba3e52c4791498c6cc3a3b2fec11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 3
+  dropType: 0
+--- !u!54 &7551782888788955079
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155140798900432468}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

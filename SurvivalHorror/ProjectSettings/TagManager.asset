@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - VoiceManager
   - Spawnpoint
+  - Destroyer
   layers:
   - Default
   - TransparentFX

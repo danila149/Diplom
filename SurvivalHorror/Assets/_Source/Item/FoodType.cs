@@ -1,5 +1,6 @@
 ﻿public enum FoodType
 {
     Apple,
-    Bread
+    Bread,
+    Mushroom
 }
