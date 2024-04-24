@@ -43,7 +43,7 @@ public class EnemuAiMovment : MonoBehaviour
             {
                 chek = true;
             }
-            if (Dist_player < maxDistance && chek == true)
+            if (Dist_player < maxDistance)
             {
                 GetComponent<PhotonView>().RPC("FollowPlayer", RpcTarget.AllBuffered, Player.transform.position);
             }
