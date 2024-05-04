@@ -35,6 +35,12 @@ public class AttackZone : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(!gameObject.activeInHierarchy)
+            hit.gameObject.SetActive(false);
+    }
+
     [PunRPC]
     private void Disable(Vector3 pos)
     {

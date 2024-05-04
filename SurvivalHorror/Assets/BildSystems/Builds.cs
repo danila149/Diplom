@@ -9,7 +9,7 @@ public class Builds : MonoBehaviour
     {
         for (int i = 0; i < 9; i++) 
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.F))
             {
                 if (Input.GetKey(i.ToString())) 
                 {
